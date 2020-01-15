@@ -9,22 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  currLat;
-  currLng;
+  
   constructor(private  weatherService : WeatherService) {
 
    }
 
   ngOnInit() {
-    navigator.geolocation.getCurrentPosition(position => {
-
-      this.currLat = position.coords.latitude;
-      this.currLng = position.coords.longitude;
-    });
-    console.log("from getting location "+ this.currLat + "  "+ this.currLng);
-    this.weatherService.getWeather(this.currLat,this.currLng).subscribe((response)=>{
-      console.log(response);
-    });
+   
   }
 
 }

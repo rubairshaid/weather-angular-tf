@@ -1,0 +1,17 @@
+.header{
+    width: 100%;
+    height: 40%;
+   /* background-color: yellow;*/
+    position : relative;
+    margin : auto;
+}
+
+.headerData{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.restInformation{
+    display: inline;
+}
