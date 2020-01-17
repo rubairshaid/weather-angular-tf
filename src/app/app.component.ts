@@ -19,8 +19,16 @@ export class AppComponent implements OnInit{
   weatherData=[];
   currLat;
   currLng;
+  daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  currentDay=this.daylist[this.date.getDay()];
+  i=0;
+  j=this.date.getDay()+1;
+  NextDays=[];
+  
+  
   ngOnInit()
   {
+    
     /*navigator.geolocation.getCurrentPosition(position => {
 
       this.currLat = position.coords.latitude;
@@ -35,7 +43,20 @@ export class AppComponent implements OnInit{
   this.weatherData=response.json()
   ;
 })
+while (this.i<4) {
+    if(this.j==7)
+    {
+      this.j=0;
+    }
+    
+    this.NextDays[this.i]=this.daylist[this.j];
+    this.i++;
+    this.j++;
   }
-  //imgIcon="http://openweathermap.org/img/wn/"+this.weatherData.list[0].weather.icon+"@2x.png";
+  
+
+  }
+  
+  
  
 }
